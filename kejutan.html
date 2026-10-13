@@ -182,8 +182,8 @@ body.fall #finale .big path{fill:#b5463e}
 <section class="screen on" id="pin">
   <div class="bubble" id="pinMsg" role="status">Psst, ada kejutan buat kamu!</div>
   <div class="mochi" id="mochi1" style="margin:16px 0 12px"></div>
-  <h1>Ada kejutan untukmu</h1>
-  <p class="sub">Masukkan PIN untuk membukanya. Petunjuk: tanggal lahirmu.</p>
+  <h1>Cie ada penasaran</h1>
+  <p class="sub">Masukkan PIN untuk membukanya. Petunjuk:pin tab.</p>
   <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
   <div class="pad" id="pad"></div>
 </section>
@@ -252,12 +252,12 @@ body.fall #finale .big path{fill:#b5463e}
 <script>
 /* ===== UBAH BAGIAN INI ===== */
 const CONFIG = {
-  nama: "Sayang",
+  nama: "Natalia Destasari",
   pengirim: "Whily",
   pin: "1410",
   template: "template-surat.png",   // opsional: simpan gambar template bunga dengan nama ini. Jika tidak ada, desain bunga dibuat otomatis.
   pertanyaan: [
-    { q: "Siapa yang paling sering bikin kamu senyum?",
+    { q: "Siapa yang paling sering bikin ko emosi?",
       o: [["Kucing tetangga","Kucingnya cemburu. Coba lagi."],
           ["Aku, tentu saja","Jawaban paling benar sepanjang masa.",1],
           ["Tukang bakso","Dia hanya menang di urusan kuah."]] },
@@ -279,11 +279,11 @@ const CONFIG = {
     {t:"foto", src:"awal.jpeg", cap:"Awal cerita kita"},
     {t:"h", x:"Perjalanan Kita"},
     {t:"kenangan", items:[
-      ["[Isi tanggal]","Pertama kali kita bertemu. Aku masih ingat betapa gugupnya aku, dan bagaimana senyummu membuat semuanya terasa mudah."],
-      ["[Isi tanggal]","Obrolan panjang pertama kita, yang berlalu tanpa terasa. Dari situ aku tahu bahwa aku ingin mengenalmu lebih jauh."],
-      ["[Isi tanggal]","Hari ketika aku sadar bahwa aku sudah jatuh hati, dan tidak ingin kembali."],
-      ["[Isi tanggal]","Hari kita resmi bersama. Hari yang mungkin tampak biasa bagi dunia, tetapi luar biasa bagiku."],
-      ["[Isi tanggal]","[Ganti dengan perjalanan, tempat, atau momen kecil yang paling berkesan bagi kalian.]"]
+      ["Desember 2024","Pertama kali kita bertemu. Aku masih ingat betapa gugupnya aku, dan bagaimana senyummu membuat semuanya terasa mudah."],
+      ["Desember 2024","Obrolan panjang pertama kita, yang berlalu tanpa terasa. Dari situ aku tahu bahwa aku ingin mengenalmu lebih jauh."],
+      ["Desember 2024","Hari ketika aku sadar bahwa aku sudah jatuh hati, dan tidak ingin kembali."],
+      ["25 Desember 2024","Hari kita resmi bersama. Hari yang mungkin tampak biasa bagi dunia, tetapi luar biasa bagiku."],
+      ["28 Februari 2026","Aku rela keta ledong rapat gebrak demig malming agu kraeng sale GBK, ai sadi eme sampak emosi hi inuk sale mai terang Ho'o"]
     ]},
     {t:"foto", src:"palingkuingat.jpeg", cap:"Hari yang paling kuingat"},
     {t:"h", x:"Sebuah Cerita Kecil"},
@@ -296,7 +296,7 @@ const CONFIG = {
     {t:"p", x:"Aku tidak menjanjikan hidup yang selalu mudah. Namun aku berjanji untuk tetap tinggal, belajar menjadi lebih baik, dan menggenggam tanganmu di hari yang cerah maupun saat hujan."},
     {t:"foto", src:"apaadanya1.jpeg", cap:"Kita yang apa adanya"},
     {t:"foto", src:"apaadanya2.jpeg", cap:"Kita yang apa adanya"},
-    {t:"p", x:"Sekali lagi, selamat ulang tahun. Terima kasih sudah ada. Aku sayang kamu, hari ini dan seterusnya."},
+    {t:"p", x:"Sekali lagi, selamat ulang tahun. Terima kasih sudah ada. Aku momang hau, hari ini dan seterusnya."},
     {t:"ttd"}
   ],
   foto: [
@@ -543,7 +543,7 @@ function askQ(i){
 function toHbd(){
   const t=$("hbdTitle"); t.textContent=""; t.setAttribute("aria-label",`Selamat ulang tahun, ${CONFIG.nama}`);
   let k=0;
-  `Selamat ulang tahun, ${CONFIG.nama}`.split(" ").forEach((w,wi,arr)=>{
+  `🎊Selamat ulang tahun🎊, ${CONFIG.nama}`.split(" ").forEach((w,wi,arr)=>{
     const wd=document.createElement("span"); wd.className="wd"; wd.setAttribute("aria-hidden","true");
     [...w].forEach(ch=>{const s=document.createElement("span");s.className="hop";s.textContent=ch;s.style.animationDelay=(k++*45)+"ms";wd.appendChild(s)});
     t.appendChild(wd); if(wi<arr.length-1) t.appendChild(document.createTextNode(" "));
@@ -657,7 +657,7 @@ function go(d){
   layout();
 }
 function finish(){
-  $("phTitle").textContent=`Aku sayang kamu, ${CONFIG.nama}`;
+  $("phTitle").textContent=`Aku momang hau, ${CONFIG.nama}`;
   $("nav").hidden=true; $("tapHint").hidden=true; $("pdots").hidden=true; $("finale").hidden=false;
   burst(240); startBalloons(false);
 }
