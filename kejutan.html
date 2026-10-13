@@ -168,7 +168,6 @@ body.fall .card{box-shadow:0 14px 28px rgba(95,35,30,.3),inset 0 0 0 1px rgba(20
 #finale .char{width:96px}
 #finale .big{width:46px;animation:beat 1s ease-in-out infinite;margin-bottom:60px}
 body.fall #finale .big path{fill:#b5463e}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -316,7 +315,7 @@ const CONFIG = {
 /* ===== AKHIR BAGIAN UBAH ===== */
 
 const $ = id => document.getElementById(id);
-const REDUCED = matchMedia("(prefers-reduced-motion:reduce)").matches;
+const REDUCED = false; /* sengaja diabaikan agar animasi tetap jalan di HP */
 const INK = "#3b2230";
 const FALLC=["#b5463e","#c9953a","#e9a98f","#8f332e","#d98a6c","#f3c9b4"];
 const isFall=()=>document.body.classList.contains("fall");
